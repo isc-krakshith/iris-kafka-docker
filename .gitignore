@@ -1,0 +1,11 @@
+#kafka logs
+kafka/kafka_2.13-3.0.1/logs
+
+
+# do not commit local VSCode settings
+.vscode/settings.json
+.vscode
+*.code-workspace
+# OS generated files
+.DS_Store
+

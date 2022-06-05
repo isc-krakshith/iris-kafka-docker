@@ -1,0 +1,16 @@
+    ; run installer to create namespace
+    do $SYSTEM.OBJ.Load("/opt/kafka/Installer.cls", "ck")
+    set sc = ##class(App.Installer).setup() 
+    new $namespace
+    set namespace = "KAFKA"
+    set $namespace=namespace
+    set app = $System.CSP.GetDefaultApp(namespace) _ "/"
+    ;do EnableDeepSee^%SYS.cspServer(app)
+    ZN "KAFKA"
+    ;Kafka.Data.Orders Data
+    d ##class(Kafka.Data.Orders).Populate(500)
+    
+    zn "%SYS"
+    Do ##class(Security.Users).UnExpireUserPasswords("*")
+    ; call your initial methods here
+    halt
