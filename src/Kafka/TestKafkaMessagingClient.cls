@@ -30,7 +30,7 @@ ClassMethod KafkaClient()
 
 		// Create topic
 		W "Creating topic...", !
-		Set topic = "quickstart-events"
+		Set topic = "testBidsAsks"
 		#Dim queueSettings As %External.Messaging.KafkaTopicSettings = ##class(%External.Messaging.KafkaTopicSettings).%New()
 		Set queueSettings.numberOfPartitions = 1, queueSettings.replicationFactor = 1
 		W "Topic settings: ", queueSettings.ToJSON(), !
@@ -40,7 +40,7 @@ ClassMethod KafkaClient()
 
 		//Send message
 		W "Sending message...", !
-		Set value = "test value 2", key = "test key 2"
+		Set value = "{""dateTime"":""2022-06-07T13:18:32.000"",""ref"":""OH77CBN3"", ""security"":""SECB"", ""bid"":0, ""ask"":50, ""vol"":400}", key = "testBidsAsksKey2"
 		Set msg = ##class(%External.Messaging.KafkaMessage).%New()
 		Set msg.topic = topic
 		Set msg.value = value

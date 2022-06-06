@@ -34,7 +34,7 @@ Method OnRequest(pRequest As EnsLib.Kafka.Message, Output pResponse As Ens.Respo
 			Set tMsg = ##class(EnsLib.Kafka.Message).%New()
 			Set tMsg.topic = ..Topic
 			Set tMsg.key = pRequest.key
-			Set tMsg.value = "{""ref"":"_bidAskMsg.ref_","_type_"DateTime"":"_bidAskMsg.dateTime_",""OrderId"":"_matchingbidsAsks.orderId_","_type_",""OrderDateTime"":"_matchingbidsAsks.dateTime_",""Vol"":"_matchingbidsAsks.vol_",""OfferPrice"":"_matchingbidsAsks.bidAsk_","_type_"Price"":"_price_"}"
+			Set tMsg.value = "{""ref"":"_bidAskMsg.ref_","_type_"DateTime"":"_bidAskMsg.dateTime_",""OrderId"":"_matchingbidsAsks.orderId_","_type_",""OrderDateTime"":"_matchingbidsAsks.dateTime_",""Available"":"_matchingbidsAsks.vol_",""Fulfill"":"_vol_",""OfferPrice"":"_matchingbidsAsks.bidAsk_","_type_"Price"":"_price_"}"
 			do ..SendRequestAsync(..TargetConfigName, tMsg, 0)
 		}
 	}

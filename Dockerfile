@@ -1,4 +1,5 @@
 ARG IMAGE=intersystems/iris-community:2022.1.0.191.0
+ARG IMAGE=intersystemsdc/iris-community:latest
 FROM $IMAGE
 
 USER root
