@@ -56,3 +56,11 @@ All the business logic is here
 
 ### Kafka.TestKafkaMessagingClient.cls
 Creates a Kafka client using native API calls and runs tests on it to verify succesful functioning.
+#### Start InterSystem IRIS terminal in running container to test it
+```
+docker-compose exec iris iris session iris
+
+zn "KAFKA"
+
+do ##class(Kafka.TestKafkaMessagingClient).KafkaClient()
+```

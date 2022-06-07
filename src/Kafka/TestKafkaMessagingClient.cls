@@ -30,7 +30,7 @@ ClassMethod KafkaClient()
 
 		// Create topic
 		W "Creating topic...", !
-		Set topic = "testBidsAsks"
+		Set topic = "test-Bids-Asks"
 		#Dim queueSettings As %External.Messaging.KafkaTopicSettings = ##class(%External.Messaging.KafkaTopicSettings).%New()
 		Set queueSettings.numberOfPartitions = 1, queueSettings.replicationFactor = 1
 		W "Topic settings: ", queueSettings.ToJSON(), !
@@ -62,7 +62,7 @@ ClassMethod KafkaClient()
         while 1 {
 		    Set tSC = client.ReceiveMessage(topic, .messages) // receiveSettings.ToJSON())
             set counter = counter + 1
-            w counter,!
+            //w counter,!
             Quit:messages.Size>0
 		    Quit:$$$ISERR(tSC)
         }
