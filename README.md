@@ -68,15 +68,22 @@ bin/kafka-console-producer.sh --topic bids-Asks --bootstrap-server localhost:909
 ```
 ##### BASH 4 : CONSUME EVENTS FROM A TOPIC
 In the fourth shell...
+```
 bin/kafka-console-consumer.sh --topic trades --bootstrap-server localhost:9092
-
+```
 ##### BASH 3 : PRODUCE EVENTS
 Go back to the third shell...
-Then generate bid-ask events, one line at a time... After each event is produced, the resulting trades topic events are visbile in the Management Portal as well as the fourth shell described above
+Then generate bid-ask events, one line at a time... After each event is produced, the resulting trades topic events are visbile the fourth shell described above as well as in the Management Portal (Select any of the components of the production by clicking once -> On the right hand pane, select the "Messages" tab, then any of the messages in the list to explore them in depth)
 ```
 {"dateTime":"2022-06-07T13:16:22.000","ref":"OH77BBN3", "security":"SECA", "bid":50, "ask":0, "vol":300}
+```
+```
 {"dateTime":"2022-06-07T13:17:32.000","ref":"OH77CBN3", "security":"SECB", "bid":0, "ask":50, "vol":400}
+```
+```
 {"dateTime":"2022-06-07T13:18:42.000","ref":"OH77DBN3", "security":"SECC", "bid":0, "ask":55, "vol":200}
+```
+```
 {"dateTime":"2022-06-07T13:19:52.000","ref":"OH77EBN3", "security":"SECD", "bid":70, "ask":0, "vol":250}
 ```
 ## What's inside the repository
