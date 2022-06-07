@@ -39,47 +39,38 @@ Start the [Kafka.TraderProduction](http://localhost:52773/csp/kafka/EnsPortal.Pr
 docker-compose exec iris bash
 ```
 CD TO KAFKA INSTALLATION
-========================
 ```
 cd /kafka/kafka_2.13-3.0.1/
 ```
 #### START THE KAFKA ENVIRONMENT
-+++++++++++++++++++++++++++
-BASH 1 : START ZOOKEEPER
-========================
+##### BASH 1 : START ZOOKEEPER
 In the frist shell...
 ```
 bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
-BASH 2 : START BROKER
-=====================
+##### BASH 2 : START BROKER
 In the second shell...
 ```
 bin/kafka-server-start.sh config/server.properties
 ```
-BASH 3 : CREATE A TOPIC
-=======================
+##### BASH 3 : CREATE A TOPIC
 In the third shell...
 ```
 bin/kafka-topics.sh --create --topic bids-Asks --bootstrap-server localhost:9092
 ```
-DESCRIBE TOPIC
-===============
+###### DESCRIBE TOPIC
 ```
 bin/kafka-topics.sh --describe --topic bids-Asks --bootstrap-server localhost:9092
 ```
-PRODUCE EVENTS TO TOPIC
-=======================
+###### PRODUCE EVENTS ON TOPIC
 ```
 bin/kafka-console-producer.sh --topic bids-Asks --bootstrap-server localhost:9092
 ```
-BASH 4 : CONSUME EVENTS FROM A TOPIC
-====================================
+##### BASH 4 : CONSUME EVENTS FROM A TOPIC
 In the fourth shell...
 bin/kafka-console-consumer.sh --topic trades --bootstrap-server localhost:9092
 
-BASH 3 : PRODUCE EVENTS
-=======================
+##### BASH 3 : PRODUCE EVENTS
 Go back to the third shell...
 Then generate bid-ask events, one line at a time... After each event is produced, the resulting trades topic events are visbile in the Management Portal as well as the fourth shell described above
 ```
