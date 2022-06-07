@@ -24,7 +24,7 @@ Among other things, iris.script which is called by the installer at this stage p
 ```
 $ docker-compose up -d
 ```
-##Solution
+## Solution
 ![KafkaTechTalkArchitecture](https://user-images.githubusercontent.com/73292865/172374065-fd0142d2-7764-4f3a-97e4-aedb23a33982.png)
 
 ## How to Use it
