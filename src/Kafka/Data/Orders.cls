@@ -59,9 +59,6 @@ ClassMethod Match(buy As %Boolean, tickerName As %String, volume As %Numeric, pr
 	return resultSet  // return results to other server-side code
 }
 
-/// Unique index on Branch phone
-Index orderIdIndex On orderId [ Unique ];
-
 Storage Default
 {
 <Data name="OrdersDefaultData">

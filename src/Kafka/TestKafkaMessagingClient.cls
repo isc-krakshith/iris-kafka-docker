@@ -51,6 +51,8 @@ ClassMethod KafkaClient()
 		
 		// Receive message
 		W "Receiving message...", !
+		//KafkaReceiveSettings will be avialable InterSystems IRIS v 2022.2 onwards
+		//until then we need to loop unitl the message is received back 
 		//#Dim receiveSettings As %External.Messaging.KafkaReceiveSettings = ##class(%External.Messaging.KafkaReceiveSettings).%New()
 		//Set receiveSettings.pollTimeout = 100000
 		//W "Receive settings: ", receiveSettings.ToJSON(), !
