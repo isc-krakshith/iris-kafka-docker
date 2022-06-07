@@ -26,7 +26,7 @@ $ docker-compose up -d
 ```
 
 ## How to Use it
-Open [InterSystems IRIS Management Portal] (http://localhost:52773/csp/sys/UtilHome.csp) on your browser
+Open [InterSystems IRIS Management Portal](http://localhost:52773/csp/sys/UtilHome.csp) on your browser
 
 default account _SYSTEM / SYS will need to be changed at first login
 
