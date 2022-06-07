@@ -26,10 +26,68 @@ $ docker-compose up -d
 ```
 
 ## How to Use it
+### Start the InterSystems IRIS Production
 Open [InterSystems IRIS Management Portal](http://localhost:52773/csp/sys/UtilHome.csp) on your browser
 
 default account _SYSTEM / SYS will need to be changed at first login
 
+Start the [Kafka.TraderProduction](http://localhost:52773/csp/kafka/EnsPortal.ProductionConfig.zen?PRODUCTION=Kafka.TraderProduction), by clicking the "Start" button
+### Start Kafka. Tnen produce and consume events via shell sessions inside the container
+#### EXECUTE 4x CONTAINER SHELLS
+++++++++++++++++++++++++++
+```
+docker-compose exec iris bash
+```
+CD TO KAFKA INSTALLATION
+========================
+```
+cd /kafka/kafka_2.13-3.0.1/
+```
+#### START THE KAFKA ENVIRONMENT
++++++++++++++++++++++++++++
+BASH 1 : START ZOOKEEPER
+========================
+In the frist shell...
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+BASH 2 : START BROKER
+=====================
+In the second shell...
+```
+bin/kafka-server-start.sh config/server.properties
+```
+BASH 3 : CREATE A TOPIC
+=======================
+In the third shell...
+```
+bin/kafka-topics.sh --create --topic bids-Asks --bootstrap-server localhost:9092
+```
+DESCRIBE TOPIC
+===============
+```
+bin/kafka-topics.sh --describe --topic bids-Asks --bootstrap-server localhost:9092
+```
+PRODUCE EVENTS TO TOPIC
+=======================
+```
+bin/kafka-console-producer.sh --topic bids-Asks --bootstrap-server localhost:9092
+```
+BASH 4 : CONSUME EVENTS FROM A TOPIC
+====================================
+In the fourth shell...
+bin/kafka-console-consumer.sh --topic trades --bootstrap-server localhost:9092
+
+BASH 3 : PRODUCE EVENTS
+=======================
+Go back to the third shell...
+Then generate bid-ask events, one line at a time... After each event is produced, the resulting trades topic events are visbile in the Management Portal as well as the fourth shell described above
+```
+{"dateTime":"2022-06-07T13:16:22.000","ref":"OH77BBN3", "security":"SECA", "bid":50, "ask":0, "vol":300}
+{"dateTime":"2022-06-07T13:17:32.000","ref":"OH77CBN3", "security":"SECB", "bid":0, "ask":50, "vol":400}
+{"dateTime":"2022-06-07T13:18:42.000","ref":"OH77DBN3", "security":"SECC", "bid":0, "ask":55, "vol":200}
+{"dateTime":"2022-06-07T13:19:52.000","ref":"OH77EBN3", "security":"SECD", "bid":70, "ask":0, "vol":250}
+```
 ## What's inside the repository
 
 ### Dockerfile
