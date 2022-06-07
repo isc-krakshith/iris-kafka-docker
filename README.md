@@ -38,7 +38,7 @@ Dockerfile which starts IRIS and imports Installer.cls and then runs the Install
 
 ### .vscode/settings.json
 
-Settings file to let you code in VSCode with [VSCode ObjectScript plugin](https:)
+Settings file to let you code in VSCode with [VSCode ObjectScript plugin](https://intersystems-community.github.io/vscode-objectscript/)
 
 ### .vscode/launch.json
 Config file if you want to debug with VSCode ObjectScript
