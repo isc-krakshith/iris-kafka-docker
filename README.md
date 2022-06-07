@@ -25,7 +25,7 @@ Among other things, iris.script which is called by the installer at this stage p
 $ docker-compose up -d
 ```
 ## Solution
-![KafkaTechTalkArchitecture](https://user-images.githubusercontent.com/73292865/172374065-fd0142d2-7764-4f3a-97e4-aedb23a33982.png)
+![Architecture Diagram](./Images/SolutionArchitecture.png)
 
 ## How to Use it
 ### Start the InterSystems IRIS Production
