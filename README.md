@@ -101,8 +101,6 @@ Settings file to let you code in VSCode with [VSCode ObjectScript plugin](https:
 ### .vscode/launch.json
 Config file if you want to debug with VSCode ObjectScript
 
-[Read about all the files in this artilce](https://community.intersystems.com/post/dockerfile-and-friends-or-how-run-and-collaborate-objectscript-projects-intersystems-iris)
-
 ### Apache Kafka v 2.13-3.0.1
 Docker host volume bind makes this available within the container at /kafka/kafka_2.13-3.0.1
 
