@@ -1,5 +1,5 @@
 # iris-kafka-docker
-demonstrate InterSystems IRIS and Kafka integration
+Demonstrate InterSystems IRIS and Kafka integration. In this solution, Kafka is installed in the IRIS container. If you're looking for a solution where IRIS is running natively with a containerised implementation of Kafka, plesae [see here](https://github.com/isc-krakshith/iris-native-kafka-docker)
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
